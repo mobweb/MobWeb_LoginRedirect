@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <MobWeb_LoginRedirect>
+            <version>0.1.0</version>
+        </MobWeb_LoginRedirect>
+    </modules>
+    <global>
+        <models>
+            <loginredirect>
+                <class>MobWeb_LoginRedirect_Model</class>
+            </loginredirect>
+        </models>
+        <helpers>
+            <loginredirect>
+                <class>MobWeb_LoginRedirect_Helper</class>
+            </loginredirect>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <customer_login>
+                <observers>
+                    <loginredirect>
+                        <type>singleton</type>
+                        <class>loginredirect/observer</class>
+                        <method>customerLogin</method>
+                    </loginredirect>
+                </observers>
+            </customer_login>
+        </events>
+    </frontend>
+ </config>
